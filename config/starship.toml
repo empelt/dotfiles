@@ -1,0 +1,58 @@
+command_timeout = 500
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$golang\
+$python\
+$kubernetes\
+$aws\
+$cmd_duration\
+$line_break\
+$character"""
+
+[character]
+success_symbol = "[❯](#6e8dd5)"
+error_symbol = "[❯](#c47070)"
+
+[directory]
+truncation_length = 3
+style = "#88a8e8"
+
+[git_branch]
+symbol = " "
+style = "#9a7ec4"
+
+[git_status]
+style = "#b094d8"
+
+[nodejs]
+style = "#7a9f7a"
+
+[golang]
+style = "#6aafaf"
+
+[python]
+style = "#b0a070"
+
+[kubernetes]
+disabled = false
+symbol = "󱃾 "
+style = "#6e8dd5"
+format = '[$symbol$context]($style) '
+context_aliases = { ".*:cluster/(?P<cluster>[\\w-]+)$" = "$cluster" }
+
+[aws]
+disabled = false
+symbol = " "
+style = "#b0a070"
+format = '[$symbol$profile ($region)]($style) '
+
+[cmd_duration]
+min_time = 2_000
+format = "took [$duration](#b4b4b4) "
+
+[status]
+disabled = true

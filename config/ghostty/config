@@ -1,0 +1,25 @@
+# フォント
+font-family = "JetBrains Mono Nerd Font"
+font-size = 14
+
+# テーマ
+theme = GitHub Dark Default
+
+# 透明度・背景
+background-opacity = 0.80
+background-blur = true
+
+# ウィンドウ
+window-padding-x = 10
+window-padding-y = 8
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+# カーソル
+cursor-style = block
+cursor-style-blink = true
+
+# その他
+copy-on-select = clipboard
+confirm-close-surface = false
+shell-integration = zsh

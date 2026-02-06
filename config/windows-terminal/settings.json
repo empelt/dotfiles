@@ -1,0 +1,39 @@
+{
+    "$help": "Windows Terminal settings - copy relevant parts to your settings.json",
+    "profiles": {
+        "defaults": {
+            "font": {
+                "face": "JetBrainsMono Nerd Font",
+                "size": 14
+            },
+            "opacity": 85,
+            "useAcrylic": true,
+            "colorScheme": "GitHub Dark Default"
+        }
+    },
+    "schemes": [
+        {
+            "name": "GitHub Dark Default",
+            "background": "#0D1117",
+            "foreground": "#C9D1D9",
+            "cursorColor": "#58A6FF",
+            "selectionBackground": "#3B5070",
+            "black": "#484F58",
+            "red": "#FF7B72",
+            "green": "#3FB950",
+            "yellow": "#D29922",
+            "blue": "#58A6FF",
+            "purple": "#BC8CFF",
+            "cyan": "#39C5CF",
+            "white": "#B1BAC4",
+            "brightBlack": "#6E7681",
+            "brightRed": "#FFA198",
+            "brightGreen": "#56D364",
+            "brightYellow": "#E3B341",
+            "brightBlue": "#79C0FF",
+            "brightPurple": "#D2A8FF",
+            "brightCyan": "#56D4DD",
+            "brightWhite": "#F0F6FC"
+        }
+    ]
+}
