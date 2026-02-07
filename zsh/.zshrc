@@ -19,21 +19,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # ============================================
-# 2. SSL/TLS設定
-# ============================================
-if [ -n "$HOMEBREW_PREFIX" ]; then
-    export MY_CUSTOM_CA_PATH="$HOMEBREW_PREFIX/etc/openssl@3/certs"
-    export MY_CUSTOM_CA_FILE="$MY_CUSTOM_CA_PATH/palo-root.pem"
-    export SSL_CERT_DIR="$MY_CUSTOM_CA_PATH"
-    export CAPATH="$MY_CUSTOM_CA_PATH"
-    export NODE_EXTRA_CA_CERTS="$MY_CUSTOM_CA_FILE"
-    export REQUESTS_CA_BUNDLE="$MY_CUSTOM_CA_FILE"
-    export CURL_CA_BUNDLE="$MY_CUSTOM_CA_FILE"
-    export AWS_CA_BUNDLE="$HOMEBREW_PREFIX/etc/ca-certificates/cert.pem"
-fi
-
-# ============================================
-# 3. シェルオプション（fish-like動作）
+# 2. シェルオプション（fish-like動作）
 # ============================================
 setopt AUTO_CD              # ディレクトリ名だけでcd
 setopt AUTO_PUSHD           # cdでディレクトリスタックに追加
@@ -46,14 +32,14 @@ HISTSIZE=50000
 SAVEHIST=50000
 
 # ============================================
-# 4. sheldon（プラグイン）
+# 3. sheldon（プラグイン）
 # ============================================
 if command -v sheldon &> /dev/null; then
     eval "$(sheldon source)"
 fi
 
 # ============================================
-# 5. キーバインド（fish-like）
+# 4. キーバインド（fish-like）
 # ============================================
 bindkey -e
 bindkey '^[[A' history-substring-search-up
@@ -62,7 +48,7 @@ bindkey '^F' autosuggest-accept
 bindkey '^[[C' autosuggest-accept
 
 # ============================================
-# 6. 補完設定
+# 5. 補完設定
 # ============================================
 autoload -Uz compinit && compinit -C
 zstyle ':completion:*' menu select
@@ -70,7 +56,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
 
 # ============================================
-# 7. ツール初期化
+# 6. ツール初期化
 # ============================================
 if command -v mise &> /dev/null; then
     eval "$(mise activate zsh)"
@@ -87,11 +73,11 @@ if command -v starship &> /dev/null; then
 fi
 
 # ============================================
-# 8. エイリアス
+# 7. エイリアス
 # ============================================
 alias k='kubectl'
 
 # ============================================
-# 9. ローカル設定（gitignore対象）
+# 8. ローカル設定（gitignore対象）
 # ============================================
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
